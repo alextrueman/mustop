@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Top Musics</h1>
+<%= link_to 'New Top music', new_top_music_path %>
+<table class="table table-bordered">
+  <tbody>
+    <% @top_musics.each do |top_music| %>
+        <tr>
+          <th rowspan="2"><img src="<%= top_music.picture %>"></th>
+          <th>Artist:</th>
+          <td><%= top_music.name %></td>
+        </tr>
+        <tr>
+          <th>Song:</th>
+          <td><%= top_music.title %></td>
+        </tr>
+        <td><%= link_to 'Show', top_music %> |
+        <%= link_to 'Edit', edit_top_music_path(top_music) %> |
+        <%= link_to 'Destroy', top_music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

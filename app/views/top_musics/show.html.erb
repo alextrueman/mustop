@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @top_music.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @top_music.picture %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @top_music.title %>
+</p>
+
+<%= link_to 'Edit', edit_top_music_path(@top_music) %> |
+<%= link_to 'Back', top_musics_path %>
