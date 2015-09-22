@@ -4,19 +4,16 @@ namespace :data do
 		doc = Nokogiri::HTML(open('https://itunes.apple.com/us/rss/topsongs/limit=10/xml'))
 		artists = []
 		
-		doc.xpath("//title").each do |i| 
-			artists << i.text.split("- ")[1]
+		doc.xpath('//artist').each do |i| 
+			artists << i['href'].split("artist/")[1].split("/")[0]
 		end
-		
-		artists.compact!
-		artists.map! { |i| i.mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').downcase.to_s.gsub(/[^A-Za-z,\s]/, "").gsub(" ", "-") }
-	
+				
 		artists.each do |i|
-			url_ids = "http://api.deezer.com/artist/#{i}"
+			url_ids = "http://api.deezer.com/search/artist?q='#{i}'"
 			res_ids = open(url_ids)	
 			doc_ids = JSON.parse(res_ids.read)
-
-			top_url = "http://api.deezer.com/artist/#{doc_ids['id']}/top"
+			
+			top_url = "http://api.deezer.com/artist/#{doc_ids['data'].first['id']}/top"
 			top_res = open(top_url)
 			doc_top = JSON.parse(top_res.read)
 			
@@ -30,4 +27,3 @@ namespace :data do
 		end
 	end
 end
-
