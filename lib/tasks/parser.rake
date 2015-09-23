@@ -7,7 +7,7 @@ namespace :data do
 		doc.xpath('//artist').each do |i| 
 			artists << i['href'].split("artist/")[1].split("/")[0]
 		end
-		
+		artists.uniq!
 		TopMusic.delete_all
 			
 		artists.each do |i|
