@@ -1,27 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Top Musics</h1>
-<%= link_to 'New Top music', new_top_music_path %>
-<table class="table table-bordered">
-  <tbody>
-    <% @top_musics.each do |top_music| %>
-        <tr>
-          <th rowspan="2"><img src="<%= top_music.picture %>"></th>
-          <th>Artist:</th>
-          <td><%= top_music.name %></td>
-        </tr>
-        <tr>
-          <th>Song:</th>
-          <td><%= top_music.title %></td>
-        </tr>
-        <td><%= link_to 'Show', top_music %> |
-        <%= link_to 'Edit', edit_top_music_path(top_music) %> |
-        <%= link_to 'Destroy', top_music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>Top Music</h1>
+<h4><%= link_to 'New Top music', new_top_music_path %></h4>
 
+<section class="wapper">
+  <% @top_musics.each do |top| %>
+  <section class="topmus">
+    <img src="<%= top.picture %>" alt="">
+    <section class="name"><h4><b><%= top.name %></b></h4></section>
+    <section class="title"><h4><%= top.title %></h4></section>
+    <section class="more">
+     <%= link_to 'Show', top %> |
+     <%= link_to 'Edit', edit_top_music_path(top) %> |
+     <%= link_to 'Destroy', top, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </section>
+  </section>
+  <% end %>
+</section> 
 <br>
+
 
 
