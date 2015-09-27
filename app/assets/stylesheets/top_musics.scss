@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "twitter/bootstrap";
 
+
 .wapper {
 	width: 1200px;
 	height: 80%;
@@ -23,7 +24,6 @@
 }
 
 .topmus img, section {
-	text: #666;
 	text-align: center;
 }
 
@@ -44,24 +44,21 @@ h4{
 	word-spacing: 0;
 	}
 h1{
-	/* Embed this font from Google Fonts at
-https://www.google.com/fonts/specimen/Caesar+Dressing */ 
-
-background-color: #FFF;
-color: #444;
-font-family: "Caesar Dressing";
-font-feature-settings: "'liga' 1";
-font-kerning: auto;
-font-style: normal;
-
-font-weight: 400;
-letter-spacing: 0;
-line-height: 1.5em;
-font-size: 150px; 
-text-align: center;
-text-decoration: none;
-text-transform: none;
-word-spacing: 0;
+	background-color: #FFF;
+	color: #444;
+	font-family: "Caesar Dressing";
+	font-feature-settings: "'liga' 1";
+	font-kerning: auto;
+	font-style: normal;
+	
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.5em;
+	font-size: 150px; 
+	text-align: center;
+	text-decoration: none;
+	text-transform: none;
+	word-spacing: 0;
 }
 
 .topmus img{
@@ -70,3 +67,4 @@ word-spacing: 0;
 	width: 250px;
 	height: 250px;
 }
+
